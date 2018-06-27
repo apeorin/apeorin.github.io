@@ -1,0 +1,172 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif; }
+
+a,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: #666666;
+  list-style: none;
+  list-style-image: none;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 14px; }
+
+span {
+  color: #fff; }
+
+.btn {
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: 0.3s; }
+  .btn:hover {
+    background-color: #ff7200;
+    border: 1px solid #ff7200; }
+
+.section__title {
+  color: #666666;
+  font-weight: bolder;
+  font-size: 2em;
+  text-align: center;
+  position: relative; }
+  .section__title::after {
+    content: '';
+    position: absolute;
+    width: 15rem;
+    height: 2px;
+    background-color: #666666; }
+
+.header {
+  height: 100vh;
+  background: url("../img/background.png");
+  background-position: center;
+  background-size: cover;
+  border-top: 3px solid #ff7200;
+  border-bottom: 3px solid #ff7200; }
+  .header .header__nav {
+    margin-top: 3rem; }
+    .header .header__nav .header-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .header .header__nav .header-menu .header-menu__item {
+        display: inline-block;
+        padding: 1em 1.5em; }
+        .header .header__nav .header-menu .header-menu__item .header-menu__text {
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #fff; }
+        .header .header__nav .header-menu .header-menu__item.dropdown {
+          position: relative;
+          display: inline-block; }
+          .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 2.5em;
+            left: 0;
+            background-color: #343434;
+            border-radius: 5px;
+            min-width: 220px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1; }
+            .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item {
+              color: #fff;
+              padding: 12px 16px;
+              display: block; }
+              .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-content__text {
+                color: #bbbbbb;
+                text-transform: uppercase; }
+                .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-content__text .dropdown-content__icon {
+                  display: none; }
+              .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover.submenu--open .dropdown-submenu {
+                display: block;
+                position: absolute;
+                right: -160px; }
+              .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover .dropdown-content__text {
+                color: #fff; }
+                .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover .dropdown-content__text .dropdown-content__icon {
+                  display: inline;
+                  float: right; }
+              .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-submenu {
+                display: none;
+                position: relative;
+                background-color: #343434;
+                border-radius: 5px;
+                min-width: 160px;
+                transform: translateY(-1.75rem);
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                z-index: 1; }
+                .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-submenu .dropdown-submenu__item {
+                  padding: 12px 16px; }
+                  .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-submenu .dropdown-submenu__item .dropdown-submenu__text {
+                    color: #bbbbbb;
+                    text-transform: uppercase; }
+                    .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-submenu .dropdown-submenu__item .dropdown-submenu__text:hover {
+                      color: #fff; }
+        .header .header__nav .header-menu .header-menu__item:hover {
+          background-color: #343434;
+          border-radius: 7px; }
+          .header .header__nav .header-menu .header-menu__item:hover .header-menu__text {
+            color: #ff7200; }
+          .header .header__nav .header-menu .header-menu__item:hover .dropdown-content {
+            display: block; }
+      .header .header__nav .header-menu .header-logo {
+        border: 1px solid #fff;
+        padding: 1em 3em;
+        color: #fff;
+        text-align: center;
+        margin: 0 2em; }
+        .header .header__nav .header-menu .header-logo .header-logo__title {
+          display: block;
+          font-size: 3em;
+          text-transform: uppercase;
+          font-weight: 600; }
+        .header .header__nav .header-menu .header-logo .header-logo__subtitle {
+          font-size: 0.9em;
+          text-transform: uppercase;
+          font-weight: 600; }
+  .header .header-greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7rem; }
+    .header .header-greeting .header-greeting__title {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 5em; }
+    .header .header-greeting .header-greeting__subtitle {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.5em; }
+      .header .header-greeting .header-greeting__subtitle i {
+        margin: 0 2em;
+        font-size: 0.3rem; }
+      .header .header-greeting .header-greeting__subtitle span {
+        font-size: inherit;
+        font-weight: 600;
+        color: #ff7200; }
+    .header .header-greeting .header-greeting__btn {
+      margin-top: 3rem; }
+
+/*# sourceMappingURL=style.css.map */

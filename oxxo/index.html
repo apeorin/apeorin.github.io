@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Oxxo</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-  </head>
-  <body>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="js/main.js" charset="utf-8"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Oxxo</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header__nav">
+      <ul class="header-menu">
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">About us</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">Who we are?</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">Portfolio</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">Our team</a>
+        </li>
+        <li class="header-logo">
+          <span class="header-logo__title">Oxxo</span>
+          <span class="header-logo__subtitle">Responsive theme</span>
+        </li>
+        <li class="header-menu__item dropdown">
+          <a href="#" class="header-menu__text">Services</a>
+          <ul class="dropdown-content">
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">Submenu title 1</a></li>
+            <li class="dropdown-content__item submenu--open">
+              <a href="#" class="dropdown-content__text">Some Title Here
+                  <i class="dropdown-content__icon fas fa-chevron-right"></i>
+                </a>
+              <ul class="dropdown-submenu">
+                <li class="dropdown-submenu__item">
+                  <a href="#" class="dropdown-submenu__text">Sublink1</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">About our company</a></li>
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">lorem ipsum title</a></li>
+            <li class="dropdown-content__item submenu--open">
+              <a href="#" class="dropdown-content__text">just ipsum title
+                <i class="dropdown-content__icon fas fa-chevron-right"></i>
+              </a>
+              <ul class="dropdown-submenu">
+                <li class="dropdown-submenu__item"><a href="#" class="dropdown-submenu__text">Submenu title 1</a></li>
+                <li class="dropdown-submenu__item"><a href="#" class="dropdown-submenu__text">Submenu title 2</a></li>
+                <li class="dropdown-submenu__item"><a href="#" class="dropdown-submenu__text">Submenu title 3</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">dolor sit amet title</a></li>
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">sit title with amet</a></li>
+            <li class="dropdown-content__item"><a href="#" class="dropdown-content__text">ipsum with lorem</a></li>
+          </ul>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">Clients</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">How we do?</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__text">Contact us</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-greeting">
+      <span class="header-greeting__title">we are. oxo.</span>
+      <span class="header-greeting__subtitle">web design<i class="fas fa-circle"></i><span>social media</span><i class="fas fa-circle"></i>graphics<i class="fas fa-circle"></i>start-up</span>
+      <a href="#" class="header-greeting__btn btn">more about us</a>
+    </div>
+  </header>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+
 </html>
