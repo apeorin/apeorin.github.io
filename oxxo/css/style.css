@@ -41,18 +41,34 @@ span {
     background-color: #ff7200;
     border: 1px solid #ff7200; }
 
-.section__title {
-  color: #666666;
-  font-weight: bolder;
-  font-size: 2em;
-  text-align: center;
-  position: relative; }
-  .section__title::after {
-    content: '';
-    position: absolute;
-    width: 15rem;
-    height: 2px;
-    background-color: #666666; }
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem; }
+  .section .section__title {
+    width: 50%; }
+    .section .section__title .section__header {
+      color: #666666;
+      font-weight: bolder;
+      font-size: 2.5em;
+      margin-top: 1em;
+      text-align: center;
+      text-transform: uppercase;
+      position: relative; }
+      .section .section__title .section__header::after {
+        content: '';
+        position: absolute;
+        bottom: -0.6rem;
+        width: 12rem;
+        left: 50%;
+        margin-left: -6rem;
+        height: 2px;
+        background-color: #666666; }
+    .section .section__title .section__subheader {
+      margin: 2.5rem 0 4rem;
+      text-align: center; }
 
 .header {
   height: 100vh;
@@ -168,5 +184,35 @@ span {
         color: #ff7200; }
     .header .header-greeting .header-greeting__btn {
       margin-top: 3rem; }
+
+.about {
+  margin: 0 4rem; }
+  .about .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    .about .about-content .about-content__img {
+      width: 45%;
+      height: 95%;
+      box-shadow: 0 15px 15px 5px #666666; }
+      .about .about-content .about-content__img img {
+        width: 100%; }
+    .about .about-content .about-content__text {
+      width: 50%; }
+      .about .about-content .about-content__text .about-content__title {
+        font-size: 1.5em;
+        font-weight: 600; }
+      .about .about-content .about-content__text .about-content__description .about-content__paragraph {
+        margin-top: 1.3em; }
+        .about .about-content .about-content__text .about-content__description .about-content__paragraph:last-child {
+          font-style: italic; }
+      .about .about-content .about-content__text .about-content__buttons {
+        margin-top: 3rem; }
+        .about .about-content .about-content__text .about-content__buttons .about-btn {
+          color: #ff7200;
+          border: 1px solid #ff7200;
+          margin-right: 25px; }
+          .about .about-content .about-content__text .about-content__buttons .about-btn:hover {
+            color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
