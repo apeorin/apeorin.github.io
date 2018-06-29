@@ -33,7 +33,7 @@ ul {
 }
 
 span {
-  color: #fff;
+  // color: #fff;
 }
 
 .btn {
@@ -55,7 +55,7 @@ span {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 5rem;
+  // padding-bottom: 5rem;
 
   .section__title {
     width: 50%;
@@ -213,6 +213,7 @@ span {
         margin: 0 2em;
 
         .header-logo__title {
+          color: #fff;
           display: block;
           font-size: 3em;
           text-transform: uppercase;
@@ -220,6 +221,7 @@ span {
         }
 
         .header-logo__subtitle {
+          color: #fff;
           font-size: 0.9em;
           text-transform: uppercase;
           font-weight: 600;
@@ -268,6 +270,7 @@ span {
 
 .about {
   margin: 0 4rem;
+  padding-bottom: 5rem;
 
   .about-content {
     display: flex;
@@ -323,6 +326,7 @@ span {
   background: url("../img/amazing.png");
   background-position: center;
   background-size: cover;
+  padding-bottom: 3rem;
 
   .section__title {
     .section__header {
@@ -456,21 +460,25 @@ span {
 }
 
 .portfolio {
+  padding: 0;
   .portfolio-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: flex-end;
+
     .portfolio-content__item {
       width: 25%;
       height: 250px;
       position: relative;
+
       .portfolio-content__img {
         object-fit: cover;
         width: 100%;
         height: 100%;
         transition: 0.5s;
       }
+
       .portfolio-content__icons {
         justify-content: center;
         align-items: center;
@@ -479,6 +487,7 @@ span {
         width: 100%;
         top: 30%;
         margin-top: -25px;
+
         .icon-container {
           display: flex;
           justify-content: center;
@@ -488,18 +497,22 @@ span {
           border: 3px solid #f0f0f0;
           border-radius: 50%;
           margin-right: 20px;
+
           i {
             color: #f0f0f0;
             font-size: 1.5em;
           }
+
           &:hover {
             background-color: #f0f0f0;
+
             i {
               color: $secondary-color;
             }
           }
         }
       }
+
       .portfolio-content__description {
         position: absolute;
         display: none;
@@ -509,12 +522,14 @@ span {
         left: 0;
         right: 0;
         background-color: #f0f0f0;
+
         .portfolio-content__title {
           font-size: 1.5em;
           margin-top: 0.5em;
           text-align: center;
           color: #363636;
         }
+
         .portfolio-content__kind {
           text-align: center;
           text-transform: uppercase;
@@ -523,16 +538,99 @@ span {
           color: $primary-color;
         }
       }
+
       &:hover {
         cursor: pointer;
+
         .portfolio-content__img {
           filter: brightness(0.7);
         }
+
         .portfolio-content__icons {
           display: flex;
         }
+
         .portfolio-content__description {
           display: block;
+        }
+      }
+    }
+  }
+}
+
+.buy {
+  padding-bottom: 5rem;
+  .section__title {
+    .section__header {
+      margin-bottom: 2em;
+    }
+    .section__subheader {
+      span {
+        color: $secondary-color;
+      }
+    }
+  }
+  .buy-controls {
+    .buy-controls__btn {
+      background-color: $secondary-color;
+      border: 1px solid $secondary-color;
+      color: #f0f0f0;
+      i {
+        margin-right: 0.5em;
+      }
+      &:first-child {
+        margin-right: 2rem;
+      }
+      &:hover {
+        background-color: #fff;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.clients {
+  background-image: url("../img/clients.png");
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 5rem;
+  .section__title {
+    .section__header {
+      font-weight: 400;
+      color: #f0f0f0;
+      &::after {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  .clients-content {
+    width: 55%;
+    margin-top: 5em;
+    .clients-content__title {
+      margin-bottom: 1em;
+      text-transform: uppercase;
+      font-size: 2em;
+      color: #f0f0f0;
+      text-align: center;
+    }
+    .clients-content__text {
+      color: #f0f0f0;
+      text-align: center;
+    }
+    .clients-content__author {
+      margin-top: 1em;
+      color: #f0f0f0;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-align: center;
+
+      .clients-content__corp {
+        font-size: 1em;
+        color: $secondary-color;
+        &::before {
+          content: ' / ';
+          color: #f0f0f0;
         }
       }
     }
