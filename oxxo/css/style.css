@@ -19,13 +19,14 @@ ul {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   color: #666666;
   list-style: none;
   list-style-image: none;
   text-decoration: none;
   font-weight: normal;
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 1.5em; }
 
 .btn {
   padding: 1em 1.5em;
@@ -164,10 +165,12 @@ ul {
     flex-direction: column;
     margin-top: 7rem; }
     .header .header-greeting .header-greeting__title {
+      color: #fff;
       text-transform: uppercase;
       font-weight: 600;
       font-size: 5em; }
     .header .header-greeting .header-greeting__subtitle {
+      color: #fff;
       display: flex;
       align-items: center;
       text-transform: uppercase;
@@ -421,5 +424,93 @@ ul {
         .clients .clients-content .clients-content__author .clients-content__corp::before {
           content: ' / ';
           color: #f0f0f0; }
+
+.tooltip-clients {
+  height: 150px;
+  background-color: #ff7200;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .tooltip-clients .tooltip-clients__content {
+    width: 90%;
+    display: flex;
+    justify-content: space-around; }
+    .tooltip-clients .tooltip-clients__content .tooltip-clients__item {
+      cursor: pointer;
+      width: 200px; }
+      .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip {
+        position: relative;
+        display: inline-block; }
+        .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 180px;
+          background-color: #555;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+          position: absolute;
+          z-index: 10;
+          transform: translateY(10px);
+          margin-left: -160px;
+          opacity: 0;
+          transition: opacity 0.3s; }
+          .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext .tooltiptext__company {
+            display: block;
+            font-size: 0.9em;
+            color: #fff; }
+          .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext .tooltiptext__text {
+            display: block;
+            margin-top: 0.4em;
+            color: #fff;
+            font-size: 0.8em; }
+          .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext .tooltiptext__site {
+            display: block;
+            margin-top: 0.4em;
+            font-size: 0.8em;
+            color: #ff7200; }
+          .tooltip-clients .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #555 transparent; }
+      .tooltip-clients .tooltip-clients__content .tooltip-clients__item:hover .tooltip .tooltiptext {
+        visibility: visible;
+        opacity: 1; }
+
+.howwedo .howwedo-content {
+  display: flex;
+  justify-content: space-around; }
+  .howwedo .howwedo-content .howwedo-content__picture {
+    width: 40%;
+    max-width: 40%; }
+  .howwedo .howwedo-content .howwedo-content__list {
+    width: 50%; }
+    .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 3.5rem; }
+      .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-icon-bg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        background-color: #ff7200;
+        border-radius: 50%;
+        margin-right: 1rem; }
+        .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-icon-bg .howwedo-content__icon {
+          color: #f7f7f7;
+          font-size: 2em; }
+      .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-content__container {
+        width: 90%; }
+        .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-content__container .howwedo-content__title {
+          font-size: 1.5em;
+          margin-bottom: 1em; }
+      .howwedo .howwedo-content .howwedo-content__list .howwedo-content__item:first-child {
+        margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */
