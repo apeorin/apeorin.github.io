@@ -162,6 +162,13 @@ ul {
           font-size: 0.9em;
           text-transform: uppercase;
           font-weight: 600; }
+  .header .hamburger-menu {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    text-align: right;
+    margin-right: 1rem;
+    display: none; }
   .header .header-greeting {
     display: flex;
     justify-content: center;
@@ -288,10 +295,10 @@ ul {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        width: 2.5em;
-        height: 2.5em;
+        min-width: 2.5em;
+        min-height: 2.5em;
         background-color: #f0f0f0;
-        margin-right: 1.3em;
+        margin-right: 1em;
         transition: 0.3s; }
         .team .wrapper .team__list .team-item .team-item__social .team-item__scnetw:last-child {
           margin-right: 0; }
@@ -330,8 +337,8 @@ ul {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 50px;
-          height: 50px;
+          min-width: 50px;
+          min-height: 50px;
           border: 3px solid #f0f0f0;
           border-radius: 50%;
           margin-right: 20px; }
@@ -451,7 +458,8 @@ ul {
           text-align: center;
           opacity: 0;
           border-radius: 6px;
-          transition: opacity 0.3s; }
+          transition: opacity 0.3s;
+          z-index: 10; }
           .tooltip-clients .wrapper .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext .tooltiptext__company {
             display: block;
             font-size: 0.9em;
@@ -481,8 +489,7 @@ ul {
 .howwedo .wrapper .howwedo-content {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding-bottom: 5rem; }
+  align-items: flex-start; }
   .howwedo .wrapper .howwedo-content .howwedo-content__picture {
     width: 40%;
     max-width: 40%; }
@@ -497,8 +504,8 @@ ul {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 65px;
-        height: 65px;
+        min-width: 4em;
+        min-height: 4em;
         background-color: #ff7200;
         border-radius: 50%;
         margin-right: 1rem; }
@@ -565,14 +572,14 @@ ul {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          margin-top: 1em; }
+          margin-top: 1em;
+          width: 90%; }
           .contacts .wrapper .contacts-content .contacts-content__item .contact-info .contact-info__social .contact-info__icon {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1em;
-            width: 2.5em;
-            height: 2.5em;
+            min-width: 2em;
+            min-height: 2em;
             border: 1px solid #fff;
             border-radius: 50%;
             cursor: pointer; }
@@ -612,8 +619,8 @@ ul {
           align-items: center;
           text-transform: capitalize; }
           .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .service-content__title .i-container {
-            width: 1.5rem;
-            height: 1.5rem;
+            min-width: 1.5em;
+            min-height: 1.5em;
             background-color: #ff7200;
             border-radius: 50%;
             display: flex;
@@ -644,7 +651,8 @@ ul {
         align-items: flex-end;
         flex-direction: column; }
         .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .formcontrol {
-          width: 90%;
+          box-sizing: border-box;
+          width: 100%;
           border-radius: 3px;
           border: 1px solid #acabab;
           padding: 10px 0 10px 10px;
@@ -704,15 +712,20 @@ footer {
           footer .wrapper .footer-content .rigth-part .footer-menu .footer-menu__item:hover .footer-menu__link {
             color: #fff; }
 
+@media (max-width: 1200px) {
+  .tooltip-clients .wrapper .tooltip-clients__content .tooltip-clients__item {
+    width: 100px;
+    margin-right: 3rem; }
+    .tooltip-clients .wrapper .tooltip-clients__content .tooltip-clients__item img {
+      width: 100%; }
+    .tooltip-clients .wrapper .tooltip-clients__content .tooltip-clients__item .tooltip .tooltiptext {
+      width: 120px;
+      padding: 5px 0;
+      margin-left: -120px;
+      transform: translateY(10px); }
+    .tooltip-clients .wrapper .tooltip-clients__content .tooltip-clients__item:last-child {
+      margin-right: 0; } }
 @media (max-width: 992px) {
-  .header {
-    height: auto;
-    padding-bottom: 3rem; }
-    .header .header__nav {
-      display: none; }
-    .header .header-greeting .header-greeting__btn {
-      font-size: 1.5em; }
-
   .section .wrapper .section__title {
     width: 90%; }
     .section .wrapper .section__title .section__header {
@@ -721,6 +734,63 @@ footer {
       font-size: 1.1em; }
       .section .wrapper .section__title .section__subheader span {
         font-size: 1em; }
+
+  .header {
+    height: 75vh;
+    padding-bottom: 3rem; }
+    .header .header__nav {
+      display: none; }
+    .header .hamburger-menu {
+      display: block; }
+    .header .header-greeting .header-greeting__btn {
+      font-size: 1em; }
+
+  .team .wrapper .team__list {
+    flex-wrap: wrap; }
+    .team .wrapper .team__list .team-item {
+      margin: 1.5rem 0;
+      width: 45%; }
+      .team .wrapper .team__list .team-item .team-item__photo {
+        width: 50%; }
+      .team .wrapper .team__list .team-item .team-item__description {
+        width: 85%; }
+      .team .wrapper .team__list .team-item .team-item__social {
+        width: 85%; }
+        .team .wrapper .team__list .team-item .team-item__social .team-item__scnetw .team-item__link {
+          font-size: 0.75em; }
+
+  .portfolio .wrapper .portfolio-content .portfolio-content__item {
+    height: 100px; }
+    .portfolio .wrapper .portfolio-content .portfolio-content__item .portfolio-content__icons {
+      top: 50%;
+      margin-top: -1.5rem; }
+      .portfolio .wrapper .portfolio-content .portfolio-content__item .portfolio-content__icons .icon-container {
+        min-width: 3rem;
+        min-height: 3rem; }
+    .portfolio .wrapper .portfolio-content .portfolio-content__item:hover .portfolio-content__description {
+      display: none; }
+
+  .tooltip-clients {
+    display: none; }
+
+  .howwedo .wrapper .howwedo-content .howwedo-content__picture {
+    display: none; }
+  .howwedo .wrapper .howwedo-content .howwedo-content__list {
+    width: 100%; }
+    .howwedo .wrapper .howwedo-content .howwedo-content__list .howwedo-content__item {
+      width: 100%; }
+      .howwedo .wrapper .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-icon-bg {
+        margin-right: 2rem; }
+      .howwedo .wrapper .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-content__container .howwedo-content__text {
+        width: 100%; }
+
+  .contacts .wrapper .contacts-content .contacts-content__item {
+    width: 30%; }
+    .contacts .wrapper .contacts-content .contacts-content__item.posts {
+      display: none; }
+    .contacts .wrapper .contacts-content .contacts-content__item.form .contacts-form .contacts-form__button {
+      display: block;
+      width: 100%; }
 
   footer .footer-content .left-part {
     width: 60%; }
@@ -748,9 +818,10 @@ footer {
       display: none; }
     .about .wrapper .about-content .about-content__text {
       width: 90%; }
-    .about .wrapper .about-content .about-content__buttons .about-btn {
-      margin-top: 1rem;
-      display: block; }
+      .about .wrapper .about-content .about-content__text .about-content__buttons .about-btn {
+        display: block;
+        margin-top: 1rem;
+        margin-right: 0; }
 
   .amazing .wrapper .amazing-content .amazing-content__item {
     width: 45%;
@@ -758,19 +829,97 @@ footer {
     .amazing .wrapper .amazing-content .amazing-content__item .amazing-content__icon {
       font-size: 1.5em; }
     .amazing .wrapper .amazing-content .amazing-content__item .amazing-content__text {
-      width: 85%; } }
+      width: 85%; }
+
+  .contacts .wrapper .contacts-content .contacts-content__item {
+    font-size: 0.8em; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__subtitle {
+      font-size: 0.8em; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__adress span,
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__adress span,
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__mail span,
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__phone span {
+      font-size: 0.8em; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__social .contact-info__icon {
+      font-size: 1em; }
+      .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__social .contact-info__icon .contact-info__link {
+        font-size: 1em; }
+    .contacts .wrapper .contacts-content .contacts-content__item.services .service-content .service-content__item .service-content__title {
+      font-size: 0.9em; }
+      .contacts .wrapper .contacts-content .contacts-content__item.services .service-content .service-content__item .service-content__title .i-container i {
+        font-size: 0.7em; }
+    .contacts .wrapper .contacts-content .contacts-content__item.services .service-content .service-content__item .service-content__subtitle p {
+      font-size: 0.8em; } }
 @media (max-width: 576px) {
-  .header .header-greeting {
-    font-size: 0.5em; }
+  .header {
+    height: 50vh; }
+    .header .header-greeting {
+      font-size: 0.5em; }
+      .header .header-greeting .header-greeting__subtitle {
+        word-break: keep-all;
+        text-align: center; }
+      .header .header-greeting .header-greeting__btn {
+        font-size: 1.5em; }
 
   .amazing .wrapper .amazing-content .amazing-content__item {
     margin: 0.5rem 0;
-    width: 90%; } }
+    width: 90%; }
+
+  .team .wrapper .team__list .team-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .team .wrapper .team__list .team-item .team-item__photo {
+      width: 50%; }
+    .team .wrapper .team__list .team-item .team-item__description {
+      width: 100%; }
+    .team .wrapper .team__list .team-item .team-item__social {
+      width: 100%; }
+      .team .wrapper .team__list .team-item .team-item__social .team-item__scnetw .team-item__link {
+        font-size: 0.75em; }
+
+  .portfolio {
+    display: none; }
+
+  .clients .wrapper .clients-content {
+    font-size: 0.75em;
+    width: 100%; }
+    .clients .wrapper .clients-content .clients-content__text {
+      width: 100%; }
+
+  .tooltip-clients {
+    display: none; }
+
+  .contacts .wrapper .contacts-content .contacts-content__item {
+    width: 45%; }
+    .contacts .wrapper .contacts-content .contacts-content__item.form {
+      display: none; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info__social .contact-info__icon {
+      min-width: 1.5rem;
+      min-height: 1.5rem; }
+      .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info__social .contact-info__icon .contact-info__link i {
+        font-size: 0.8em; } }
 @media (max-width: 368px) {
   .buy .wrapper .buy-controls .buy-controls__btn {
     display: block;
     margin-top: 1rem; }
     .buy .wrapper .buy-controls .buy-controls__btn:first-child {
-      margin: 0; } }
+      margin: 0; }
+
+  .howwedo .wrapper .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-icon-bg {
+    display: none; }
+  .howwedo .wrapper .howwedo-content .howwedo-content__list .howwedo-content__item .howwedo-content__container {
+    text-align: justify; }
+
+  .contacts .wrapper .contacts-content .contacts-content__item {
+    width: 100%;
+    text-align: center; }
+    .contacts .wrapper .contacts-content .contacts-content__item.services {
+      display: none; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__item {
+      width: 100%; }
+    .contacts .wrapper .contacts-content .contacts-content__item.info .contact-info .contact-info__social {
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
