@@ -28,6 +28,24 @@ ul {
   font-size: 14px;
   line-height: 1.5em; }
 
+.backToTopBtn {
+  position: fixed;
+  display: none;
+  bottom: 2rem;
+  right: 2rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  background-color: #ff7200;
+  outline: none;
+  border: none;
+  border: 1px solid #ff7200;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99; }
+  .backToTopBtn i {
+    font-size: 2em;
+    color: #fff; }
+
 .btn {
   padding: 1em 1.5em;
   text-transform: uppercase;
@@ -111,16 +129,14 @@ ul {
                 color: #bbbbbb;
                 text-transform: uppercase; }
                 .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-content__text .dropdown-content__icon {
-                  display: none; }
+                  display: inline;
+                  float: right; }
               .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover.submenu--open .dropdown-submenu {
                 display: block;
                 position: absolute;
                 right: -160px; }
               .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover .dropdown-content__text {
                 color: #fff; }
-                .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item:hover .dropdown-content__text .dropdown-content__icon {
-                  display: inline;
-                  float: right; }
               .header .header__nav .header-menu .header-menu__item.dropdown .dropdown-content .dropdown-content__item .dropdown-submenu {
                 display: none;
                 position: relative;
@@ -163,12 +179,34 @@ ul {
           text-transform: uppercase;
           font-weight: 600; }
   .header .hamburger-menu {
-    color: #fff;
-    cursor: pointer;
-    font-size: 2em;
-    text-align: right;
-    margin-right: 1rem;
-    display: none; }
+    display: none;
+    position: relative; }
+    .header .hamburger-menu .hamburger-menu__icon {
+      color: #fff;
+      cursor: pointer;
+      font-size: 2em;
+      text-align: right;
+      margin-right: 1rem; }
+    .header .hamburger-menu .hamburger-menu__list {
+      position: absolute;
+      right: 1rem;
+      display: none;
+      background-color: #343434;
+      border-radius: 5px;
+      min-width: 220px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 99; }
+      .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item {
+        color: #fff;
+        padding: 12px 16px;
+        display: block; }
+        .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item .hamburger-menu__link {
+          color: #bbbbbb;
+          text-transform: uppercase; }
+        .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item:hover .hamburger-menu__link {
+          color: #fff; }
+    .header .hamburger-menu .hamburger-menu__list--active {
+      display: block; }
   .header .header-greeting {
     display: flex;
     justify-content: center;
@@ -203,8 +241,7 @@ ul {
   justify-content: space-between;
   align-items: flex-start; }
   .about .wrapper .about-content .about-content__img {
-    width: 45%;
-    box-shadow: 0 15px 15px 5px #666666; }
+    width: 45%; }
     .about .wrapper .about-content .about-content__img img {
       object-fit: cover;
       width: 100%; }
@@ -631,13 +668,22 @@ ul {
               font-size: 0.75em;
               cursor: pointer;
               color: #fff; }
-        .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .service-content__subtitle {
+          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .service-content__title.accordion {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            padding: 0;
+            font-size: 1.1em;
+            cursor: pointer; }
+        .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .panel {
+          display: none;
+          overflow: hidden;
           position: relative; }
-          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .service-content__subtitle p {
+          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .panel p {
             margin: 0.5em 0 1em;
             text-align: justify;
             color: #acabab; }
-          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .service-content__subtitle::after {
+          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .panel::after {
             content: '';
             position: absolute;
             bottom: -1em;
@@ -645,6 +691,8 @@ ul {
             left: 0;
             height: 2px;
             background-color: #fff; }
+          .contacts .wrapper .contacts-content .contacts-content__item .service-content .service-content__item .panel.active {
+            display: block; }
       .contacts .wrapper .contacts-content .contacts-content__item .contacts-form {
         display: flex;
         justify-content: flex-end;
@@ -808,6 +856,9 @@ footer {
       footer .footer-content .rigth-part .footer-menu .footer-menu__item .footer-menu__link {
         font-size: 0.75em; } }
 @media (max-width: 768px) {
+  .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item {
+    padding: 0.5em 1.5em; }
+
   .about .wrapper .about-content {
     width: 90%;
     display: flex;
@@ -851,15 +902,13 @@ footer {
     .contacts .wrapper .contacts-content .contacts-content__item.services .service-content .service-content__item .service-content__subtitle p {
       font-size: 0.8em; } }
 @media (max-width: 576px) {
-  .header {
-    height: 50vh; }
-    .header .header-greeting {
-      font-size: 0.5em; }
-      .header .header-greeting .header-greeting__subtitle {
-        word-break: keep-all;
-        text-align: center; }
-      .header .header-greeting .header-greeting__btn {
-        font-size: 1.5em; }
+  .header .header-greeting {
+    font-size: 0.5em; }
+    .header .header-greeting .header-greeting__subtitle {
+      word-break: keep-all;
+      text-align: center; }
+    .header .header-greeting .header-greeting__btn {
+      font-size: 1.5em; }
 
   .amazing .wrapper .amazing-content .amazing-content__item {
     margin: 0.5rem 0;

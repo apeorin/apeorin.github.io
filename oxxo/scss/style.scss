@@ -1,7 +1,7 @@
 $primary-color: #666666;
 $secondary-color: #ff7200;
 $white-color: #fff;
-$large: 1200px; // $large: 1366px;
+$large: 1200px;
 $medium: 992px;
 $medium2: 768px;
 $small: 576px;
@@ -49,6 +49,26 @@ ul {
   line-height: 1.5em;
 }
 
+.backToTopBtn {
+  position: fixed;
+  display: none;
+  bottom: 2rem;
+  right: 2rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  background-color: $secondary-color;
+  outline: none;
+  border: none;
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+  i {
+    font-size: 2em;
+    color: $white-color;
+  }
+}
+
 .btn {
   padding: 1em 1.5em;
   text-transform: uppercase;
@@ -65,9 +85,6 @@ ul {
 
 .section {
   .wrapper {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     @include dflex (center, center);
     flex-direction: column;
 
@@ -154,7 +171,8 @@ ul {
                 text-transform: uppercase;
 
                 .dropdown-content__icon {
-                  display: none;
+                  display: inline;
+                  float: right;
                 }
               }
 
@@ -171,11 +189,6 @@ ul {
               &:hover {
                 .dropdown-content__text {
                   color: $white-color;
-
-                  .dropdown-content__icon {
-                    display: inline;
-                    float: right;
-                  }
                 }
               }
 
@@ -247,12 +260,48 @@ ul {
   }
 
   .hamburger-menu {
-    color: #fff;
-    cursor: pointer;
-    font-size: 2em;
-    text-align: right;
-    margin-right: 1rem;
     display: none;
+    position: relative;
+
+    .hamburger-menu__icon {
+      color: #fff;
+      cursor: pointer;
+      font-size: 2em;
+      text-align: right;
+      margin-right: 1rem;
+    }
+
+    .hamburger-menu__list {
+      position: absolute;
+      right: 1rem;
+      display: none;
+      background-color: #343434;
+      border-radius: 5px;
+      min-width: 220px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 99;
+
+      .hamburger-menu__item {
+        color: $white-color;
+        padding: 12px 16px;
+        display: block;
+
+        .hamburger-menu__link {
+          color: #bbbbbb;
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          .hamburger-menu__link {
+            color: $white-color;
+          }
+        }
+      }
+    }
+
+    .hamburger-menu__list--active {
+      display: block;
+    }
   }
 
   .header-greeting {
@@ -299,7 +348,7 @@ ul {
 
       .about-content__img {
         width: 45%;
-        box-shadow: 0 15px 15px 5px $primary-color;
+        // box-shadow: 0 15px 15px 5px $primary-color;
 
         img {
           object-fit: cover;
@@ -944,9 +993,20 @@ ul {
                   color: $white-color;
                 }
               }
+
+              &.accordion {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                padding: 0;
+                font-size: 1.1em;
+                cursor: pointer;
+              }
             }
 
-            .service-content__subtitle {
+            .panel {
+              display: none;
+              overflow: hidden;
               position: relative;
 
               p {
@@ -963,6 +1023,10 @@ ul {
                 left: 0;
                 height: 2px;
                 background-color: $white-color;
+              }
+
+              &.active {
+                display: block;
               }
             }
           }
@@ -1078,9 +1142,11 @@ footer {
         .tooltip-clients__item {
           width: 100px;
           margin-right: 3rem;
+
           img {
             width: 100%;
           }
+
           .tooltip {
             .tooltiptext {
               width: 120px;
@@ -1089,6 +1155,7 @@ footer {
               transform: translateY(10px);
             }
           }
+
           &:last-child {
             margin-right: 0;
           }
@@ -1160,7 +1227,7 @@ footer {
 
           .team-item__social {
             width: 85%;
-            // justify-content: space-between;
+
             .team-item__scnetw {
               .team-item__link {
                 font-size: 0.75em;
@@ -1177,14 +1244,17 @@ footer {
       .portfolio-content {
         .portfolio-content__item {
           height: 100px;
+
           .portfolio-content__icons {
             top: 50%;
             margin-top: -1.5rem;
+
             .icon-container {
               min-width: 3rem;
               min-height: 3rem;
             }
           }
+
           &:hover {
             .portfolio-content__description {
               display: none;
@@ -1286,6 +1356,20 @@ footer {
   }
 }
 @media (max-width: $medium2) {
+  .header {
+    .hamburger-menu {
+      .hamburger-menu__list {
+        .hamburger-menu__item {
+          padding: 0.5em 1.5em;
+
+          .hamburger-menu__link {
+            // font-size: 0.85em;
+          }
+        }
+      }
+    }
+  }
+
   .about {
     .wrapper {
       .about-content {
@@ -1373,12 +1457,14 @@ footer {
               .service-content__item {
                 .service-content__title {
                   font-size: 0.9em;
+
                   .i-container {
                     i {
                       font-size: 0.7em;
                     }
                   }
                 }
+
                 .service-content__subtitle {
                   p {
                     font-size: 0.8em;
@@ -1394,13 +1480,14 @@ footer {
 }
 @media (max-width: $small) {
   .header {
-    height: 50vh;
     .header-greeting {
       font-size: 0.5em;
+
       .header-greeting__subtitle {
         word-break: keep-all;
         text-align: center;
       }
+
       .header-greeting__btn {
         font-size: 1.5em;
       }
@@ -1485,14 +1572,17 @@ footer {
       .contacts-content {
         .contacts-content__item {
           width: 45%;
+
           &.form {
             display: none;
           }
+
           &.info {
             .contact-info__social {
               .contact-info__icon {
                 min-width: 1.5rem;
                 min-height: 1.5rem;
+
                 .contact-info__link {
                   i {
                     font-size: 0.8em;
@@ -1546,14 +1636,17 @@ footer {
         .contacts-content__item {
           width: 100%;
           text-align: center;
+
           &.services {
             display: none;
           }
+
           &.info {
             .contact-info {
               .contact-info__item {
                 width: 100%;
               }
+
               .contact-info__social {
                 width: 100%;
               }
