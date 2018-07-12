@@ -90,6 +90,7 @@ ul {
 .header {
   height: 100vh;
   width: 100%;
+  padding-bottom: 3rem;
   background: url("../img/background.png");
   background-position: center;
   background-size: cover;
@@ -210,7 +211,7 @@ ul {
   .header .header-slider {
     position: relative;
     width: 90%;
-    margin: 1rem auto; }
+    margin: 6rem auto 0; }
     .header .header-slider .slickArrow {
       background: none;
       border: none;
@@ -897,17 +898,19 @@ footer {
 @media (max-width: 768px) {
   .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item {
     padding: 0.5em 1.5em; }
-  .header .header-slider .header-slider__item .header-greeting {
-    margin-top: 5rem;
-    font-size: 0.75em; }
-  .header .header-slider .header-slider__item .service-list .service-list__controls {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column; }
-    .header .header-slider .header-slider__item .service-list .service-list__controls .btn {
-      margin: 0.5rem 0;
-      width: 10rem; }
+  .header .header-slider {
+    margin: 2rem auto 0; }
+    .header .header-slider .header-slider__item .header-greeting {
+      margin-top: 5rem;
+      font-size: 0.75em; }
+    .header .header-slider .header-slider__item .service-list .service-list__controls {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column; }
+      .header .header-slider .header-slider__item .service-list .service-list__controls .btn {
+        margin: 0.5rem 0;
+        width: 10rem; }
 
   .about .wrapper .about-content {
     width: 90%;
