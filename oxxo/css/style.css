@@ -51,7 +51,6 @@ ul {
   text-transform: uppercase;
   color: #fff;
   border: 1px solid #fff;
-  border-radius: 5px;
   transition: 0.3s; }
   .btn:hover {
     background-color: #ff7200;
@@ -90,6 +89,7 @@ ul {
 
 .header {
   height: 100vh;
+  width: 100%;
   background: url("../img/background.png");
   background-position: center;
   background-size: cover;
@@ -207,34 +207,72 @@ ul {
           color: #fff; }
     .header .hamburger-menu .hamburger-menu__list--active {
       display: block; }
-  .header .header-greeting {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 6em; }
-    .header .header-greeting .header-greeting__title {
+  .header .header-slider {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto; }
+    .header .header-slider .slickArrow {
+      background: none;
+      border: none;
       color: #fff;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 5em; }
-    .header .header-greeting .header-greeting__subtitle {
-      color: #fff;
+      font-size: 5em;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-3.5rem);
+      z-index: 99; }
+      .header .header-slider .slickArrow.prevArrowBtn {
+        left: 0; }
+      .header .header-slider .slickArrow.nextArrowBtn {
+        right: 0; }
+    .header .header-slider .header-slider__item .header-greeting {
       display: flex;
       justify-content: center;
       align-items: center;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 1.5em; }
-      .header .header-greeting .header-greeting__subtitle i {
-        margin: 0 2em;
-        font-size: 0.3rem; }
-      .header .header-greeting .header-greeting__subtitle span {
-        font-size: inherit;
+      flex-direction: column;
+      width: 100%; }
+      .header .header-slider .header-slider__item .header-greeting .header-greeting__title {
+        color: #fff;
+        text-transform: uppercase;
         font-weight: 600;
-        color: #ff7200; }
-    .header .header-greeting .header-greeting__btn {
-      margin-top: 3rem; }
+        font-size: 5em; }
+      .header .header-slider .header-slider__item .header-greeting .header-greeting__subtitle {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5em; }
+        .header .header-slider .header-slider__item .header-greeting .header-greeting__subtitle i {
+          margin: 0 2em;
+          font-size: 0.3rem; }
+        .header .header-slider .header-slider__item .header-greeting .header-greeting__subtitle span {
+          font-size: inherit;
+          font-weight: 600;
+          color: #ff7200; }
+      .header .header-slider .header-slider__item .header-greeting .header-greeting__btn {
+        margin-top: 3rem; }
+    .header .header-slider .header-slider__item .service-list {
+      margin-top: 5rem;
+      width: 100%; }
+      .header .header-slider .header-slider__item .service-list .service-list__controls {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .header .header-slider .header-slider__item .service-list .service-list__controls .btn {
+          margin-right: 5rem;
+          text-align: center; }
+          .header .header-slider .header-slider__item .service-list .service-list__controls .btn:hover {
+            background-color: #fff;
+            border: 1px solid #fff;
+            color: #000; }
+          .header .header-slider .header-slider__item .service-list .service-list__controls .btn:last-child {
+            margin-right: 0; }
+      .header .header-slider .header-slider__item .service-list p {
+        margin-top: 3rem;
+        text-align: center;
+        color: #fff; }
 
 .about .wrapper .about-content {
   display: flex;
@@ -784,13 +822,14 @@ footer {
         font-size: 1em; }
 
   .header {
-    height: 75vh;
     padding-bottom: 3rem; }
     .header .header__nav {
       display: none; }
     .header .hamburger-menu {
       display: block; }
-    .header .header-greeting .header-greeting__btn {
+    .header .header-slider .slickArrow {
+      font-size: 3em; }
+    .header .header-slider .header-slider__item .header-greeting .header-greeting__btn {
       font-size: 1em; }
 
   .team .wrapper .team__list {
@@ -858,6 +897,17 @@ footer {
 @media (max-width: 768px) {
   .header .hamburger-menu .hamburger-menu__list .hamburger-menu__item {
     padding: 0.5em 1.5em; }
+  .header .header-slider .header-slider__item .header-greeting {
+    margin-top: 5rem;
+    font-size: 0.75em; }
+  .header .header-slider .header-slider__item .service-list .service-list__controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column; }
+    .header .header-slider .header-slider__item .service-list .service-list__controls .btn {
+      margin: 0.5rem 0;
+      width: 10rem; }
 
   .about .wrapper .about-content {
     width: 90%;
@@ -902,13 +952,16 @@ footer {
     .contacts .wrapper .contacts-content .contacts-content__item.services .service-content .service-content__item .service-content__subtitle p {
       font-size: 0.8em; } }
 @media (max-width: 576px) {
-  .header .header-greeting {
-    font-size: 0.5em; }
-    .header .header-greeting .header-greeting__subtitle {
+  .header .header-slider .header-slider__item .header-greeting {
+    font-size: 0.6em;
+    text-align: center; }
+    .header .header-slider .header-slider__item .header-greeting .header-greeting__subtitle {
       word-break: keep-all;
       text-align: center; }
-    .header .header-greeting .header-greeting__btn {
+    .header .header-slider .header-slider__item .header-greeting .header-greeting__btn {
       font-size: 1.5em; }
+  .header .header-slider .header-slider__item .service-list .service-list__controls .btn {
+    width: 7rem; }
 
   .amazing .wrapper .amazing-content .amazing-content__item {
     margin: 0.5rem 0;

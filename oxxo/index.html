@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Oxxo</title>
+  <link rel="stylesheet" href="css/slick.css" type="text/css">
+  <link rel="stylesheet" href="css/slick-theme.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
@@ -11,7 +13,6 @@
 
 <body>
   <button class="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
-
   <header class="header">
     <nav class="header__nav">
       <ul class="header-menu">
@@ -88,11 +89,26 @@
         <li class="hamburger-menu__item"><a href="#contacts" class="hamburger-menu__link">contact us</a></li>
       </ul>
     </div>
-    <div class="header-greeting">
-      <span class="header-greeting__title">we are. oxo.</span>
-      <span class="header-greeting__subtitle">web design<i class="fas fa-circle"></i><span>social media</span><i class="fas fa-circle"></i>graphics<i class="fas fa-circle"></i>start-up</span>
-      <a href="#" class="header-greeting__btn btn">more about us</a>
+    <div class="header-slider">
+      <div class="header-slider__item">
+        <div class="header-greeting">
+          <span class="header-greeting__title">we are. oxo.</span>
+          <span class="header-greeting__subtitle">web design<i class="fas fa-circle"></i><span>social media</span><i class="fas fa-circle"></i>graphics<i class="fas fa-circle"></i>start-up</span>
+          <a href="#" class="header-greeting__btn btn">more about us</a>
+        </div>
+      </div>
+      <div class="header-slider__item">
+        <div class="service-list">
+          <div class="service-list__controls">
+            <a href="#" class="header-greeting__btn btn">social media</a>
+            <a href="#" class="header-greeting__btn btn">web design</a>
+            <a href="#" class="header-greeting__btn btn">digital agency</a>
+          </div>
+          <p>We are the best. Please choose one of our services.</p>
+        </div>
+      </div>
     </div>
+
   </header>
 
   <div class="about section" id="about">
@@ -639,6 +655,7 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/slick.min.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
 </body>
 
