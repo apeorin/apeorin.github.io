@@ -20,6 +20,15 @@ $(document).ready(function() {
     prevArrow: '<button type="button" class="prevArrowBtn slickArrow"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="nextArrowBtn slickArrow"><i class="fas fa-chevron-right"></i></button>'
   });
+
+  $('.clients-slider').slick({
+    arrows: true,
+    dots: false,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    prevArrow: '<button type="button" class="prevArrowBtn slickArrow"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="nextArrowBtn slickArrow"><i class="fas fa-chevron-right"></i></button>'
+  });
 });
 
 $(document).scroll(function() {

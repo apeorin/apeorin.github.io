@@ -66,7 +66,7 @@ ul {
     .section .wrapper .section__title .section__header {
       color: #666666;
       font-weight: bolder;
-      margin-top: 2em;
+      padding-top: 2em;
       font-size: 2.5em;
       text-align: center;
       text-transform: uppercase;
@@ -226,6 +226,8 @@ ul {
         left: 0; }
       .header .header-slider .slickArrow.nextArrowBtn {
         right: 0; }
+      .header .header-slider .slickArrow:hover {
+        color: #ff7200; }
     .header .header-slider .header-slider__item .header-greeting {
       display: flex;
       justify-content: center;
@@ -476,36 +478,74 @@ ul {
   background: url("../img/clients.png");
   background-position: center;
   background-size: cover; }
-  .clients .wrapper .section__title .section__header {
-    font-weight: 400;
-    color: #f0f0f0; }
-    .clients .wrapper .section__title .section__header::after {
-      background-color: #f0f0f0; }
-  .clients .wrapper .clients-content {
-    width: 55%;
-    margin-top: 5em; }
-    .clients .wrapper .clients-content .clients-content__title {
-      margin-bottom: 1em;
-      text-transform: uppercase;
-      font-size: 2em;
-      color: #f0f0f0;
+  .clients .wrapper {
+    display: block; }
+    .clients .wrapper .section__title {
+      width: 100%;
       text-align: center; }
-    .clients .wrapper .clients-content .clients-content__text {
-      color: #f0f0f0;
-      text-align: center; }
-    .clients .wrapper .clients-content .clients-content__author {
-      margin-top: 1em;
-      color: #f0f0f0;
-      text-transform: uppercase;
-      font-size: 1.2em;
-      font-weight: 600;
-      text-align: center; }
-      .clients .wrapper .clients-content .clients-content__author .clients-content__corp {
-        font-size: 1em;
-        color: #ff7200; }
-        .clients .wrapper .clients-content .clients-content__author .clients-content__corp::before {
-          content: ' / ';
-          color: #f0f0f0; }
+      .clients .wrapper .section__title .section__header {
+        font-weight: 400;
+        color: #f0f0f0; }
+        .clients .wrapper .section__title .section__header::after {
+          background-color: #f0f0f0; }
+    .clients .wrapper .clients-content {
+      padding-bottom: 2rem; }
+      .clients .wrapper .clients-content .clients-slider {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; }
+        .clients .wrapper .clients-content .clients-slider .slickArrow {
+          background-color: rgba(255, 255, 255, 0.3);
+          min-width: 1.5em;
+          min-height: 1.5em;
+          border: 1px solid #fff;
+          color: #fff;
+          font-size: 2em;
+          cursor: pointer;
+          position: absolute;
+          bottom: -4rem;
+          z-index: 99; }
+          .clients .wrapper .clients-content .clients-slider .slickArrow.prevArrowBtn {
+            transform: translateX(-2rem); }
+          .clients .wrapper .clients-content .clients-slider .slickArrow.nextArrowBtn {
+            transform: translateX(2rem); }
+          .clients .wrapper .clients-content .clients-slider .slickArrow:hover {
+            border: 1px solid #ff7200;
+            background-color: #fff;
+            color: #ff7200; }
+        .clients .wrapper .clients-content .clients-slider .clients-slider__item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 5em; }
+          .clients .wrapper .clients-content .clients-slider .clients-slider__item .clients-content__title {
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            font-size: 2em;
+            color: #f0f0f0;
+            text-align: center; }
+          .clients .wrapper .clients-content .clients-slider .clients-slider__item .clients-content__text {
+            color: #f0f0f0;
+            text-align: center;
+            width: 75%; }
+          .clients .wrapper .clients-content .clients-slider .clients-slider__item .clients-content__author {
+            margin-top: 1em;
+            color: #f0f0f0;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center; }
+            .clients .wrapper .clients-content .clients-slider .clients-slider__item .clients-content__author .clients-content__corp {
+              font-size: 1em;
+              color: #ff7200; }
+              .clients .wrapper .clients-content .clients-slider .clients-slider__item .clients-content__author .clients-content__corp::before {
+                content: ' / ';
+                color: #f0f0f0; }
 
 .tooltip-clients .wrapper {
   display: flex;
@@ -737,24 +777,38 @@ ul {
         justify-content: flex-end;
         align-items: flex-end;
         flex-direction: column; }
-        .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .formcontrol {
-          box-sizing: border-box;
-          width: 100%;
-          border-radius: 3px;
-          border: 1px solid #acabab;
-          padding: 10px 0 10px 10px;
-          margin-bottom: 1em;
-          outline-style: none;
-          font-size: 0.9em;
-          box-shadow: none;
-          font-family: 'Open Sans';
-          resize: none; }
+        .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__item {
+          position: relative;
+          width: 100%; }
+          .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__item .formcontrol {
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid #acabab;
+            padding: 10px 0 10px 10px;
+            margin-bottom: 1em;
+            outline-style: none;
+            font-size: 0.9em;
+            box-shadow: none;
+            font-family: "Open Sans";
+            resize: none; }
+            .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__item .formcontrol.message {
+              height: 9rem; }
+          .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__item i {
+            position: absolute;
+            right: 0.5rem;
+            font-size: 1.5em;
+            color: #666666;
+            transform: translateY(40%); }
         .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__button {
           background-color: #ff7200;
           border: 1px solid #ff7200;
           border-radius: 3px;
           padding: 10px 25px;
           cursor: pointer; }
+          .contacts .wrapper .contacts-content .contacts-content__item .contacts-form .contacts-form__button:hover {
+            color: #ff7200;
+            background-color: #fff; }
 
 footer {
   background-color: #202020; }

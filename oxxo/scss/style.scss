@@ -95,7 +95,7 @@ ul {
       .section__header {
         color: $primary-color;
         font-weight: bolder;
-        margin-top: 2em;
+        padding-top: 2em;
         font-size: 2.5em;
         text-align: center;
         text-transform: uppercase;
@@ -329,6 +329,10 @@ ul {
 
       &.nextArrowBtn {
         right: 0;
+      }
+
+      &:hover {
+        color: $secondary-color;
       }
     }
 
@@ -718,7 +722,12 @@ ul {
   @include bg-img("../img/clients.png");
 
   .wrapper {
+    display: block;
+
     .section__title {
+      width: 100%;
+      text-align: center;
+
       .section__header {
         font-weight: 400;
         color: #f0f0f0;
@@ -730,37 +739,79 @@ ul {
     }
 
     .clients-content {
-      width: 55%;
-      margin-top: 5em;
+      padding-bottom: 2rem;
 
-      .clients-content__title {
-        margin-bottom: 1em;
-        text-transform: uppercase;
-        font-size: 2em;
-        color: #f0f0f0;
-        text-align: center;
-      }
+      .clients-slider {
+        position: relative;
+        width: 100%;
+        @include dflex(center, center);
+        flex-direction: row;
 
-      .clients-content__text {
-        color: #f0f0f0;
-        text-align: center;
-      }
+        .slickArrow {
+          background-color: rgba(255, 255, 255, 0.3);
+          min-width: 1.5em;
+          min-height: 1.5em;
+          border: 1px solid $white-color;
+          color: $white-color;
+          font-size: 2em;
+          cursor: pointer;
+          position: absolute;
+          bottom: -4rem;
+          z-index: 99;
 
-      .clients-content__author {
-        margin-top: 1em;
-        color: #f0f0f0;
-        text-transform: uppercase;
-        font-size: 1.2em;
-        font-weight: 600;
-        text-align: center;
+          &.prevArrowBtn {
+            transform: translateX(-2rem);
+          }
 
-        .clients-content__corp {
-          font-size: 1em;
-          color: $secondary-color;
+          &.nextArrowBtn {
+            transform: translateX(2rem);
+          }
 
-          &::before {
-            content: ' / ';
+          &:hover {
+            border: 1px solid $secondary-color;
+            background-color: $white-color;
+            color: $secondary-color;
+          }
+        }
+
+        .clients-slider__item {
+          @include dflex(center, center);
+          flex-direction: column;
+          // width: 55%;
+          width: 100%;
+          margin-top: 5em;
+
+          .clients-content__title {
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            font-size: 2em;
             color: #f0f0f0;
+            text-align: center;
+          }
+
+          .clients-content__text {
+            color: #f0f0f0;
+            text-align: center;
+            width: 75%;
+          }
+
+          .clients-content__author {
+            margin-top: 1em;
+            color: #f0f0f0;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+
+            .clients-content__corp {
+              font-size: 1em;
+              color: $secondary-color;
+
+              &::before {
+                content: ' / ';
+                color: #f0f0f0;
+              }
+            }
           }
         }
       }
@@ -1096,18 +1147,35 @@ ul {
           @include dflex (flex-end, flex-end);
           flex-direction: column;
 
-          .formcontrol {
-            box-sizing: border-box;
+          .contacts-form__item {
+            position: relative;
             width: 100%;
-            border-radius: 3px;
-            border: 1px solid #acabab;
-            padding: 10px 0 10px 10px;
-            margin-bottom: 1em;
-            outline-style: none;
-            font-size: 0.9em;
-            box-shadow: none;
-            font-family: 'Open Sans';
-            resize: none;
+
+            .formcontrol {
+              box-sizing: border-box;
+              width: 100%;
+              border-radius: 3px;
+              border: 1px solid #acabab;
+              padding: 10px 0 10px 10px;
+              margin-bottom: 1em;
+              outline-style: none;
+              font-size: 0.9em;
+              box-shadow: none;
+              font-family: "Open Sans";
+              resize: none;
+
+              &.message {
+                height: 9rem;
+              }
+            }
+
+            i {
+              position: absolute;
+              right: 0.5rem;
+              font-size: 1.5em;
+              color: $primary-color;
+              transform: translateY(40%);
+            }
           }
 
           .contacts-form__button {
@@ -1116,6 +1184,11 @@ ul {
             border-radius: 3px;
             padding: 10px 25px;
             cursor: pointer;
+
+            &:hover {
+              color: $secondary-color;
+              background-color: $white-color;
+            }
           }
         }
       }
@@ -1438,6 +1511,7 @@ footer {
 
     .header-slider {
       margin: 2rem auto 0;
+
       .header-slider__item {
         .header-greeting {
           margin-top: 5rem;
